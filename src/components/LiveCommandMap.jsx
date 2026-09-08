@@ -14,12 +14,12 @@ L.Icon.Default.mergeOptions({
 });
 
 /* ------------------------------------------------------------------ */
-/*  Dark OpenStreetMap tile layer (CartoDB Dark Matter)                */
+/*  OpenStreetMap tile layer (darkened via CSS filter – no API key)    */
 /* ------------------------------------------------------------------ */
 const DARK_TILE_URL =
-  'https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png';
+  'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
 const DARK_TILE_ATTR =
-  '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>';
+  '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
 
 /* ------------------------------------------------------------------ */
 /*  Default data (same as before)                                     */

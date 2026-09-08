@@ -560,6 +560,20 @@ body {
   color: rgba(139, 184, 242, 0.7) !important;
 }
 
+/* Dark mode filter applied to OSM tile images */
+.leaflet-tile-pane {
+  filter: invert(1) hue-rotate(180deg) brightness(0.85) contrast(1.2) saturate(0.3);
+}
+
+/* Undo the filter for markers/overlays so they stay normal */
+.leaflet-marker-pane,
+.leaflet-shadow-pane,
+.leaflet-overlay-pane,
+.leaflet-popup-pane,
+.leaflet-tooltip-pane {
+  filter: none;
+}
+
 .map-title {
   margin: 0;
   font-weight: 800;
