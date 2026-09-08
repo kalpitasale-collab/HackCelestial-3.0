@@ -389,9 +389,13 @@ body {
   border: 1px solid rgba(222, 231, 255, 0.3);
   border-radius: 14px;
   padding: 0.9rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .map-inner {
+  flex: 1;
+  min-height: 0;
   height: 100%;
   border-radius: 12px;
   border: 2px solid rgba(188, 202, 232, 0.35);
@@ -409,6 +413,8 @@ body {
 }
 
 .map-inner--live {
+  flex: 1;
+  min-height: 0;
   justify-content: flex-start;
   align-items: stretch;
   text-align: left;
@@ -426,7 +432,9 @@ body {
 
 .mapbox-wrapper {
   position: relative;
-  height: clamp(520px, 68vh, 860px);
+  flex: 1;
+  height: 100%;
+  min-height: 0;
 }
 
 .map-fallback {
@@ -453,39 +461,103 @@ body {
   margin: 0 0 0.4rem;
   font-size: 1rem;
   line-height: 1.25;
-  color: #111111;
+  color: #e8ecf5;
 }
 
 .map-popup p {
   margin: 0.2rem 0 0;
   font-size: 0.86rem;
   line-height: 1.45;
-  color: #1f1f1f;
+  color: #c0c8d8;
 }
 
 .map-popup strong {
-  color: #000000;
+  color: #f0f3fa;
 }
 
-.mapboxgl-popup-content {
+/* Leaflet dark-themed popup */
+.leaflet-dark-popup .leaflet-popup-content-wrapper {
   border-radius: 10px;
   font-family: 'Manrope', sans-serif;
-  background: #ffffff;
-  color: #111111;
-  border: 1px solid rgba(17, 17, 17, 0.16);
-  box-shadow: 0 10px 28px rgba(3, 11, 24, 0.28);
-  padding: 0.55rem 0.65rem;
+  background: rgba(15, 22, 40, 0.94);
+  color: #e8ecf5;
+  border: 1px solid rgba(139, 184, 242, 0.25);
+  box-shadow: 0 10px 28px rgba(3, 11, 24, 0.55);
+  backdrop-filter: blur(10px);
 }
 
-.mapboxgl-popup-close-button {
-  color: #1d1d1d;
+.leaflet-dark-popup .leaflet-popup-content {
+  margin: 8px 10px;
+}
+
+.leaflet-dark-popup .leaflet-popup-tip {
+  background: rgba(15, 22, 40, 0.94);
+  border: 1px solid rgba(139, 184, 242, 0.15);
+}
+
+.leaflet-dark-popup .leaflet-popup-close-button {
+  color: #aab4c8;
   font-size: 1rem;
   line-height: 1;
   padding: 6px 8px;
 }
 
-.mapboxgl-popup-close-button:hover {
-  background: rgba(0, 0, 0, 0.08);
+.leaflet-dark-popup .leaflet-popup-close-button:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Boundary vertex tooltip */
+.boundary-vertex-tooltip {
+  background: rgba(7, 29, 53, 0.88) !important;
+  color: #dce8ff !important;
+  border: 1px solid rgba(139, 184, 242, 0.3) !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  padding: 2px 6px !important;
+  border-radius: 4px !important;
+  box-shadow: none !important;
+}
+
+.boundary-vertex-tooltip::before {
+  border-bottom-color: rgba(7, 29, 53, 0.88) !important;
+}
+
+/* Custom Leaflet icon classes – remove default backgrounds */
+.leaflet-circle-marker-icon,
+.leaflet-main-gate-icon,
+.leaflet-exit-icon,
+.leaflet-camera-icon {
+  background: transparent !important;
+  border: none !important;
+}
+
+/* Main gate pulse animation */
+@keyframes gatePulse {
+  0%, 100% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.6); opacity: 0; }
+}
+
+/* Leaflet zoom controls dark theme */
+.leaflet-control-zoom a {
+  background: rgba(15, 22, 40, 0.88) !important;
+  color: #dce8ff !important;
+  border-color: rgba(139, 184, 242, 0.2) !important;
+}
+
+.leaflet-control-zoom a:hover {
+  background: rgba(25, 38, 68, 0.95) !important;
+}
+
+/* Attribution dark */
+.leaflet-control-attribution {
+  background: rgba(10, 11, 23, 0.7) !important;
+  color: rgba(180, 195, 225, 0.6) !important;
+  font-size: 10px !important;
+}
+
+.leaflet-control-attribution a {
+  color: rgba(139, 184, 242, 0.7) !important;
 }
 
 .map-title {
